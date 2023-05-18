@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:shelf/shelf.dart';
 
-data(Request req) async {
+data(Request _) async {
   var input = await File('data.json').readAsString();
   var map = jsonDecode(input);
 
