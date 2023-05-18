@@ -1,8 +1,10 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:shelf/shelf.dart';
 import 'package:shelf_router/shelf_router.dart';
 
+import '../Responses/Data.dart';
 import '../Responses/Info.dart';
 import '../Responses/Login.dart';
 import '../Responses/Post.dart';
@@ -14,7 +16,7 @@ class BaseRoute {
       ..post('/login', logIn)
       ..post('/post', postImage)
       ..post('/info', userInfo)
-      // ..all('/data', (Request req) {return Response.ok(json.encode(data));})
+      ..all('/data', data)
       ..delete('/delete', checkServer)
       ..put('/update', checkServer);
 
